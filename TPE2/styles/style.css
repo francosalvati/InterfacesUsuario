@@ -7,7 +7,14 @@
     --color-primario-S1: #364079;
     --color-primario-S2: #1F2656;
 
+    --color-blanco: #F0F3FD;
+
     font-family: 'Baloo 2', cursive;
+}
+
+.h2{
+    font-weight: bold;
+    font-size: 32px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -22,6 +29,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
 }
 
 svg {
@@ -42,7 +53,8 @@ header {
 header::before{
     content: '';
     position: absolute;
-    background-image: linear-gradient(to bottom, var(--color-primario-S2), #ffffff00);
+    background: linear-gradient(180deg, rgba(31, 38, 86, 0.80) 0%, rgba(154, 163, 204, 0.40) 100%);
+    backdrop-filter: blur(5px);    
     width: 100%;
     height: 60px;
     opacity: 50%;
@@ -53,7 +65,7 @@ main {
     grid-area: main;
     width: 100%;
     min-height: calc(100vh);
-    background-color: green;
+    background-color: var(--color-primario-S2);
 }
 
 footer {
@@ -70,6 +82,70 @@ nav ul .boton-perfil{
 }
 
 
+nav ul .logo{
+    width: 90px;
+    height: 100%;
+}
+
+nav ul .boton-perfil img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+nav ul .acciones li, .boton-menu{
+    padding: 0 10px;
+}
+
+main .carrusel-container{
+    position: relative;
+    top: -250px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1500px;
+    margin: auto;
+    padding: 10px;
+}
+
+main .carrusel{
+    display: flex;
+
+    position: relative;
+    z-index: 500;
+}
+
+main .carrusel .card{
+    position: relative;
+    width: 400px;
+    height: 240px;
+    border-radius: 15px;
+    background-color: var(--color-blanco);
+    overflow: hidden;
+}
+
+main .carrusel .card img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+main .carrusel .card .card-info{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #0000003b;
+    backdrop-filter: blur(5px);
+    color: var(--color-blanco);
+    width: 100%;
+    height: 50px;
+}
+
+main .carrusel .card .card-info svg{
+    width: 45px;
+    height: 45px;
+}
 
 @media screen and (min-width:600px) {
 
@@ -91,7 +167,6 @@ nav ul .boton-perfil{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        list-style: none;
     }
 
     nav ul li{
@@ -99,10 +174,6 @@ nav ul .boton-perfil{
         align-items: center;
     }
 
-    nav ul .logo{
-        width: 90px;
-        height: 100%;
-    }
 
     nav ul div{
         display: flex;
@@ -110,16 +181,9 @@ nav ul .boton-perfil{
         align-items: center;
     }
 
-    nav ul img{
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-    }
-
-
     main .wallpaper{
         width: 100%;
-        height: 80vh;
+        height: 90vh;
         overflow: hidden;
         
     }
@@ -129,5 +193,13 @@ nav ul .boton-perfil{
         object-position: 0 -150px;
     }
 
+    main .overlay{
+        position: absolute;
+        top: calc(100vh - 400px);
+        width: 100%;
+        height: 400px;
+        z-index: 0;
+        background-image: linear-gradient( rgba(31, 38, 86, 0.00) 11.55%, rgba(31, 38, 86, 0.74) 39.88%, #1F2656 64.06%);
+    }
 
 }
