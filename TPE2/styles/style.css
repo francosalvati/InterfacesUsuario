@@ -6,32 +6,32 @@
     --color-primario: #5264A7;
     --color-primario-S1: #364079;
     --color-primario-S2: #1F2656;
-
     --color-blanco: #F0F3FD;
 
     font-family: 'Baloo 2', cursive;
 }
 
-.h2{
-    font-weight: bold;
+.h2 {
     font-size: 32px;
+    font-weight: bold;
 }
 
 ::-webkit-scrollbar-thumb {
     background: var(--color-primario-S2);
     border-radius: 6px;
 }
+
 ::-webkit-scrollbar {
     width: 2px;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
@@ -41,111 +41,124 @@ svg {
 }
 
 header {
-    position: absolute;
-    display: flex;
     align-items: center;
+    display: flex;
     height: 60px;
-    z-index: 500;
+    position: absolute;
     width: 100%;
+    z-index: 500;
     z-index: 500;
 }
 
-header::before{
-    content: '';
-    position: absolute;
+header::before {
+    backdrop-filter: blur(5px);
     background: linear-gradient(180deg, rgba(31, 38, 86, 0.80) 0%, rgba(154, 163, 204, 0.40) 100%);
-    backdrop-filter: blur(5px);    
-    width: 100%;
-    height: 60px;
+    content: '';
     opacity: 50%;
+    height: 60px;
+    width: 100%;
+    position: absolute;
 }
 
 main {
-    position: relative;
-    grid-area: main;
-    width: 100%;
-    min-height: calc(100vh);
     background-color: var(--color-primario-S2);
+    grid-area: main;
+    min-height: calc(100vh);
+    position: relative;
+    width: 100%;
 }
 
 footer {
-    position: relative;
     background-color: blue;
-    height: 150px;
     grid-area: footer;
+    height: 150px;
+    position: relative;
     width: 100%;
 }
 
-nav ul .boton-perfil{
-    display: flex;
+nav ul .boton-perfil {
     align-items: center;
+    display: flex;
 }
 
 
-nav ul .logo{
-    width: 90px;
+nav ul .logo {
     height: 100%;
+    width: 90px;
 }
 
-nav ul .boton-perfil img{
-    width: 40px;
-    height: 40px;
+nav ul .boton-perfil img {
     border-radius: 50%;
+    height: 40px;
+    width: 40px;
 }
 
-nav ul .acciones li, .boton-menu{
+nav ul .acciones li,
+.boton-menu {
     padding: 0 10px;
 }
 
-main .carrusel-container{
-    position: relative;
-    top: -250px;
+main .carrusel-container {
     display: flex;
     flex-direction: column;
-    max-width: 1500px;
     margin: auto;
+    max-width: 1500px;
     padding: 10px;
+    position: relative;
+    top: -250px;
 }
 
-main .carrusel{
+main .carrusel {
+    color: var(--color-blanco);
     display: flex;
-
+    flex-direction: column;
     position: relative;
     z-index: 500;
 }
 
-main .carrusel .card{
-    position: relative;
-    width: 400px;
-    height: 240px;
-    border-radius: 15px;
-    background-color: var(--color-blanco);
-    overflow: hidden;
+main .carrusel .flex {
+    display: flex;
+    gap: 25px;
 }
 
-main .carrusel .card img{
+main .carrusel .card {
+    background-color: var(--color-blanco);
+    border-radius: 15px;
+    height: 215px;
+    overflow: hidden;
+    position: relative;
+    width: 360px;
+}
+
+main .carrusel .card img {
+    height: 100%;
     object-fit: cover;
     width: 100%;
-    height: 100%;
 }
 
-main .carrusel .card .card-info{
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: space-around;
+main .carrusel .card .card-info {
     align-items: center;
-    background: #0000003b;
     backdrop-filter: blur(5px);
+    background: #0000003b;
+    bottom: 0;
     color: var(--color-blanco);
-    width: 100%;
+    display: flex;
     height: 50px;
+    justify-content: space-around;
+    position: absolute;
+    width: 100%;
 }
 
-main .carrusel .card .card-info svg{
-    width: 45px;
+main .carrusel .card .card-info svg {
     height: 45px;
+    width: 45px;
 }
+
+.card-destacado{
+    width: 420px;
+    height: 260px;
+}
+
 
 @media screen and (min-width:600px) {
 
@@ -157,49 +170,50 @@ main .carrusel .card .card-info svg{
     }
 
     nav {
-        position: relative;
         margin: auto;
         max-width: 1500px;
         width: 100%;
+        position: relative;
     }
 
     nav ul {
+        align-items: center;
         display: flex;
         justify-content: space-between;
-        align-items: center;
     }
 
-    nav ul li{
+    nav ul li {
+        align-items: center;
         display: flex;
-        align-items: center;
     }
 
 
-    nav ul div{
+    nav ul div {
+        align-items: center;
         display: flex;
         justify-content: space-between;
-        align-items: center;
     }
 
-    main .wallpaper{
+    main .wallpaper {
+        overflow: hidden;
         width: 100%;
         height: 90vh;
-        overflow: hidden;
-        
+
     }
 
-    main .wallpaper img{
-        width: 100%;
+    main .wallpaper img {
         object-position: 0 -150px;
+        width: 100%;
     }
 
-    main .overlay{
-        position: absolute;
-        top: calc(100vh - 400px);
-        width: 100%;
+    main .overlay {
+        background-image: linear-gradient(rgba(31, 38, 86, 0.00) 11.55%, rgba(31, 38, 86, 0.74) 39.88%, #1F2656 64.06%);
         height: 400px;
+        top: calc(100vh - 400px);
+        position: absolute;
+        width: 100%;
         z-index: 0;
-        background-image: linear-gradient( rgba(31, 38, 86, 0.00) 11.55%, rgba(31, 38, 86, 0.74) 39.88%, #1F2656 64.06%);
     }
+
 
 }
