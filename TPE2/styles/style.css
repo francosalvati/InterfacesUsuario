@@ -304,7 +304,7 @@ main .carrusel .card-destacado {
     max-width: 1000px;
 }
 
-.form-comentario .perfil img {
+.form-comentario .perfil {
     border-radius: 50%;
     border: 1px solid var(--color-blanco);
     height: 50px;
@@ -314,8 +314,12 @@ main .carrusel .card-destacado {
 .form-comentario textarea {
     background-color: var(--color-primario-L1);
     border: none;
+    height: 150px;
+    padding: 15px 0 0 10px;
     resize: none;
+    
     width: 100%;
+
 }
 
 .form-comentario textarea:focus {
