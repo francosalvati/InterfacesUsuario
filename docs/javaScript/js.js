@@ -1,23 +1,22 @@
 "use strict";
 
-if(window.location.pathname.split("/").pop() == "login.html" ){
+if (window.location.pathname.split("/").pop() == "login.html") {
 
-let form = document.querySelector(".form-login");
+    let form = document.querySelector(".form-login");
 
-function logueado(e){
-    
-    console.log(e.submitter)
-    e.submitter.classList.toggle("success")
-
-    setTimeout(() => {
-        window.location.href = "home.html"
+    function logueado(e) {
+        console.log(e.submitter)
         e.submitter.classList.toggle("success")
-    }, 500);
-}
+        setTimeout(() => {
+        })
 
-function goLogin(){
+        // setTimeout(() => {
+        //     window.location.href = "index.html"
+        // }, 5000);
+    }
 
-    let loginForm = `<img src="./imagenes/Logo.png" class="logo" alt="">
+    function goLogin() {
+        let loginForm = `<img src="./imagenes/Logo.png" class="logo" alt="">
     <div class="flex column w-90 a-center">
         <div class="input-container">
             <input type="text" id="input-dinamico" class="input-login" placeholder="">
@@ -79,11 +78,11 @@ function goLogin(){
         <a href="">olvidaste tu contraseña?</a>
         <button class="btn-2 btn-texto" id="goRegistro">Crear cuenta</button>
         </div>`
-    form.innerHTML =  loginForm
+        form.innerHTML = loginForm
     }
 
-function goRegistro(){
-    let registroForm = `<img src="./imagenes/Logo.png" class="logo" alt="">
+    function goRegistro() {
+        let registroForm = `<img src="./imagenes/Logo.png" class="logo" alt="">
 <div class="flex column w-90 a-center">
     <div class="input-container">
         <input type="text" id="input-dinamico" class="input-login" placeholder="">
@@ -124,34 +123,41 @@ function goRegistro(){
 <div class="flex w-90 a-center between">
     <a href="">olvidaste tu contraseña?</a>
     <button class="btn-3 btn-texto" id="goLogin">Crear cuenta</button>
-        </div>` 
-        form.innerHTML =  registroForm
-        }
-function borroso(){
-    form.classList.add("borroso")
-    setTimeout(() => {
-        form.classList.remove("borroso")
-    }, 500);
-}
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log(e.submitter)
-    let condicion = e.submitter.id
-    switch (condicion) {
-        case "login":
-            logueado(e)
-            break;
-        case "goLogin":
-            goLogin();
-            break;
-        case "goRegistro":
-            goRegistro()
-            break;
-        default:
-            borroso();
+        </div>`
+        form.innerHTML = registroForm
     }
-});
-goLogin();
+    function borroso() {
+        form.classList.add("borroso")
+        setTimeout(() => {
+            form.classList.remove("borroso")
+        }, 500);
+    }
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log(e.submitter)
+        let condicion = e.submitter.id
+        switch (condicion) {
+            case "login":
+                logueado(e)
+                break;
+            case "goLogin":
+                goLogin();
+                break;
+            case "goRegistro":
+                goRegistro()
+                break;
+            default:
+                borroso();
+        }
+    });
+    goLogin();
 
 }
+
+// LOADER
+
+setTimeout(function () {
+    var loaderContainer = document.querySelector(".loader-container");
+    loaderContainer.style.display = "none";
+}, 5000);
