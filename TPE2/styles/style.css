@@ -10,6 +10,7 @@
     --color-primario-S2: #1F2656;
     --color-blanco: #F0F3FD;
     --color-negro: #3D4151;
+    --color-acento: #FF5C00;
     font-family: 'Baloo 2', cursive;
 
     --elevacion1: 5px 5px 10px 5px rgba(3, 4, 26, 0.20);
@@ -83,19 +84,32 @@ body {
 
 /* Acciones */
 
-.borroso{
+.borroso {
     animation: refresco 500ms;
 }
 
 @keyframes refresco {
-    0%{
+    0% {
         filter: blur(40px);
         transform: translateX(0);
     }
-    20% { transform: translateX(-2px) rotate(-1deg); }
-    40% { transform: translateX(2px) rotate(1deg); }
-    60% { transform: translateX(-2px) rotate(-1deg); }
-    80% { transform: translateX(2px) rotate(1deg); }
+
+    20% {
+        transform: translateX(-2px) rotate(-1deg);
+    }
+
+    40% {
+        transform: translateX(2px) rotate(1deg);
+    }
+
+    60% {
+        transform: translateX(-2px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translateX(2px) rotate(1deg);
+    }
+
     100% {
         transform: translateX(0);
         filter: blur(0);
@@ -114,7 +128,7 @@ body {
     transition: 200ms ease-in;
 }
 
-.btn-2{
+.btn-2 {
     color: var(--color-primario-L2);
     background: transparent;
     border: 2px solid var(--color-primario-L2);
@@ -122,7 +136,7 @@ body {
     padding: 7px 15px;
 }
 
-.btn-3{
+.btn-3 {
     color: var(--color-primario-L2);
     background: transparent;
     border: none;
@@ -151,19 +165,28 @@ body {
 .between {
     justify-content: space-between
 }
+
 .column {
     flex-direction: column;
 }
+
 .flex {
     display: flex;
 }
-.w-100 {  width: 100%; }
-.w-90 {  width: 90%; }
 
-
-.my-20{
-    margin: 20px 0 ;
+.w-100 {
+    width: 100%;
 }
+
+.w-90 {
+    width: 90%;
+}
+
+
+.my-20 {
+    margin: 20px 0;
+}
+
 .h1 {
     font-size: 38px;
     font-weight: bold;
@@ -178,7 +201,7 @@ body {
     font-weight: 600;
 }
 
-.texto-chico{
+.texto-chico {
     font-size: 11px;
     font-style: normal;
     font-weight: 400;
@@ -203,11 +226,13 @@ p {
     height: 2px;
     width: 1500px;
 }
+
 .linea {
     background: var(--color-primario-L2);
     height: 1px;
     width: 200px;
 }
+
 .medio {
     border: var(--color-blanco) 1px solid;
     border-radius: 50%;
@@ -251,10 +276,14 @@ ul {
     padding: 0px 30px;
 }
 
-.logoNav,
-.logoFooter {
+.logoNav {
     height: 67px;
     width: 90px;
+}
+
+.logoFooter {
+    width: 200px;
+    height: 150 px;
 }
 
 .logoNav {
@@ -327,7 +356,9 @@ ul {
     overflow: hidden;
     position: relative;
     width: 92vw;
+    border-radius: 16px;
 }
+
 
 .btnContainer {
     display: flex;
@@ -335,7 +366,7 @@ ul {
     justify-content: space-between;
     left: 6px;
     position: absolute;
-    top: 60%;
+    top: 50%;
     transform: translateY(-50%);
     width: 90vw;
 }
@@ -361,9 +392,23 @@ ul {
 
 .cardsContainer {
     display: flex;
-    gap: 12px;
     scroll-snap-type: x proximity;
     transition: transform 0.3s ease-in-out;
+    border-radius: 16px;
+}
+
+.tagGratis {
+    position: absolute;
+    top: -41px;
+    left: -50px;
+    z-index: 2;
+}
+
+.tagOferta {
+    position: absolute;
+    top: -41px;
+    left: -50px;
+    z-index: 2;
 }
 
 #cardEspecial {
@@ -373,12 +418,15 @@ ul {
 
 
 .card {
-    background-color: var(--color-blanco);
-    border-radius: 15px;
     height: 175px;
-    overflow: hidden;
     position: relative;
     width: 290px;
+    border-radius: 16px;
+    margin: 8px;
+}
+
+.card:hover .cardInfo {
+    height: 50%;
 }
 
 .card li {
@@ -386,16 +434,23 @@ ul {
     display: flex;
 }
 
+.cardInfo>li>svg:hover {
+    fill: var(--color-acento);
+}
+
 .card img {
     height: 100%;
     object-fit: cover;
     width: 100%;
+    border-radius: 16px;
 }
 
 .cardInfo {
     align-items: center;
     backdrop-filter: blur(5px);
     background: #0000003b;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
     bottom: 0;
     cursor: pointer;
     color: var(--color-blanco);
@@ -404,6 +459,8 @@ ul {
     justify-content: space-around;
     position: absolute;
     width: 100%;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
 }
 
 .textoCard {
@@ -417,6 +474,11 @@ ul {
     text-align: center;
     text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.50);
     text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+.textoCard:hover {
+    color: var(--color-acento);
 }
 
 .cardInfo svg {
@@ -430,6 +492,7 @@ ul {
     color: var(--color-blanco);
 
 }
+
 /* Footer */
 .footerPrincipal {
     align-items: center;
@@ -517,6 +580,10 @@ ul {
     height: 32px;
     margin: 20px 0px;
     width: 32px;
+}
+
+svg img:hover {
+    color: #1F2656;
 }
 
 @media screen and (min-width: 768px) {
@@ -618,8 +685,11 @@ ul {
     .destacados .cardsContainer {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
         padding-right: 210px;
+    }
+
+    .destacados .card {
+        width: 350px;
     }
 
     #cardEspecial {
@@ -664,6 +734,15 @@ ul {
     }
 
     /* Footer */
+
+    .info {
+        gap: 100px;
+    }
+
+    .contenido {
+        gap: 100px;
+    }
+
 
 }
 
@@ -764,13 +843,14 @@ ul {
     border-radius: 5px;
     border: 1px solid var(--Primary-L1, #7985B9);
     color: var(--color-blanco);
-    background: rgba(154, 163, 204, 0.20);  
+    background: rgba(154, 163, 204, 0.20);
     padding: 20px 15px 5px;
     width: 100%;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1); /* Cambiar el color a blanco en fondo oscuro */
+    filter: invert(1);
+    /* Cambiar el color a blanco en fondo oscuro */
 }
 
 .input-login:focus {
@@ -791,8 +871,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /* Estilos para el label cuando el input tiene el foco o contiene texto */
-.input-login:focus + .input-label,
-.input-login:not(:placeholder-shown) + .input-label {
+.input-login:focus+.input-label,
+.input-login:not(:placeholder-shown)+.input-label {
     color: var(--color-primario-L2);
     font-size: 12px;
     left: 10px;
@@ -800,7 +880,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 0 5px;
 }
 
-.form-login .btn{
+.form-login .btn {
     background: var(--color-primario);
     border: none;
     border-radius: 5px;
@@ -811,32 +891,34 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
-.input-rapido{
+.input-rapido {
     border: none;
     border-radius: 5px;
     padding: 4px;
     width: 350px;
     margin: 5px 0;
 }
+
 .input-rapido svg {
     margin: 0 10px;
 }
+
 .input-rapido span {
     text-transform: none;
 }
 
-.form-login a{
+.form-login a {
     color: var(--color-primario-L1);
 }
 
-.form-login:last-child{
+.form-login:last-child {
     padding-bottom: 50px;
 }
 
-.form-login .success{
+.form-login .success {
     background: #FF5C00;
     filter: blur(4px);
-    box-shadow: 0px 0px 20px #FF5C00 ;
+    box-shadow: 0px 0px 20px #FF5C00;
 }
 
 @media screen and (min-width:600px) {

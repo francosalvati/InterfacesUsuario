@@ -1,11 +1,5 @@
 "use strict";
 
-// let destacados
-// let gratuitos
-// let especiales = []
-
-// let carrusel = document.querySelector(".carrusel")
-
 
 const carruseles = document.querySelectorAll('.carrusel');
 carruseles.forEach((carrusel) => {
