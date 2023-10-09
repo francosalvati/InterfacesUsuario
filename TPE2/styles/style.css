@@ -11,9 +11,34 @@
     font-family: 'Baloo 2', cursive;
 }
 
+
+.flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between
+}
+
+.puntuacion svg {
+    width: 126.31px;
+    height: 19.268px;
+    flex-shrink: 0;
+}
+
 .h2 {
     font-size: 32px;
     font-weight: bold;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -101,8 +126,8 @@ nav ul .acciones li,
 main .carrusel-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: auto;
-    max-width: 1500px;
     padding: 10px;
     position: relative;
     top: -250px;
@@ -116,9 +141,13 @@ main .carrusel {
     z-index: 500;
 }
 
-main .carrusel .flex {
+main .carrusel .row {
     display: flex;
-    gap: 25px;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow: scroll;
+    max-width: 1500px;
+    width: 100%;
 }
 
 main .carrusel .card {
@@ -154,15 +183,153 @@ main .carrusel .card .card-info svg {
     width: 45px;
 }
 
-.card-destacado{
-    width: 420px;
+main .carrusel .card-destacado {
+    flex: 0 0 auto;
     height: 260px;
+    width: 420px;
 }
 
+.carrusel-activo {}
+
+.page-footer {
+    margin-top: 220px;
+    background-color: var(--color-primario-S2);
+    color: var(--color-blanco);
+    position: relative;
+
+}
+
+.page-footer svg {
+    flex-shrink: 0;
+    height: 220px;
+    width: 100%;
+    top: -100%;
+    position: absolute;
+}
+
+.page-footer .footer-content {
+    background-color: var(--color-primario-S1);
+    height: 400px;
+    position: relative;
+}
+
+.page-footer .footer-info {
+    display: flex;
+    margin: auto;
+    max-width: 1500px;
+    justify-content: space-evenly;
+    margin-bottom: 75px;
+}
+
+.page-footer .footer-logo img {
+    width: 200px;
+}
+
+.page-footer .footer-info h3 {
+    line-height: 32px;
+}
+
+.page-footer .footer-info p {
+    line-height: 26px;
+}
+
+.separador {
+    background: var(--color-primario-L2);
+    margin: auto;
+    opacity: .5;
+    height: 2px;
+    width: 1500px;
+}
+
+.page-footer .iconos {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+}
+
+.page-footer .iconos li {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    height: 45px;
+    justify-content: center;
+    padding: 1.875px 3.75px 3.75px 3.75px;
+    width: 45px;
+    position: relative;
+}
+
+.page-footer .iconos svg {
+    flex-shrink: 0;
+    height: 45px;
+    position: relative;
+    top: 0;
+    width: 45px;
+}
+
+.juego-container {
+    color: var(--color-blanco);
+    margin: auto;
+    margin-top: 60px;
+    max-width: 1500px;
+}
+
+.juego-container .juego {
+    background: #fff;
+    background-image: #fff;
+    height: 662px;
+    width: 1500px;
+}
+
+.juego-container .rotulador {
+    margin: 20px 0;
+}
+
+.juego-container .reglas ol {
+    padding-left: 20px;
+    max-width: 60%;
+}
+
+.juego-container .reglas ol li {
+    padding: 10px;
+}
+
+.form-comentario {
+    background: var(--color-primario-L1);
+    border-radius: 35px;
+    margin: auto;
+    height: 220px;
+    padding: 20px;
+    position: relative;
+    max-width: 1000px;
+}
+
+.form-comentario .perfil {
+    border-radius: 50%;
+    border: 1px solid var(--color-blanco);
+    height: 50px;
+    width: 50px;
+}
+
+.form-comentario textarea {
+    background-color: var(--color-primario-L1);
+    border: none;
+    height: 150px;
+    padding: 15px 0 0 10px;
+    resize: none;
+    
+    width: 100%;
+
+}
+
+.form-comentario textarea:focus {
+    outline: none;
+}
 
 @media screen and (min-width:600px) {
 
     .layout {
+        background-color: var(--color-primario-S2);
         display: grid;
         grid-template-areas:
             'main'
