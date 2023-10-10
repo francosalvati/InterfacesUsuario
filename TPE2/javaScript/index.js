@@ -1,14 +1,23 @@
 "use strict";
 
-if(window.location.pathname.split("/").pop() == "index.html" || window.location.pathname.split("/").pop() == "" ){
+if (window.location.pathname.split("/").pop() == "index.html" || window.location.pathname.split("/").pop() == "") {
   window.location.href = "login.html"
 }
 
+//MENU USUARIO
+const btnUsuario = document.querySelector("#btn-usuario");
+const menuUsuario = document.querySelector(".menu-usuario");
+btnUsuario.addEventListener("click", () => {
+  menuUsuario.classList.toggle("desapareser")
+  btnUsuario.children[1].classList.toggle("rotar")
+});
 
 const btnHamburguesa = document.querySelector('.btn-menu');
+const menuHamb = document.querySelector('.hambMenu')
 btnHamburguesa.addEventListener('click', () => {
-    btnHamburguesa.children[0].src="./imagenes/hamburguesa.svg"
-    btnHamburguesa.children[0].src="./imagenes/cruz.svg"
+  btnHamburguesa.children[0].src.split("/").pop()  == "hamburguesa.svg" ? btnHamburguesa.children[0].src = "./imagenes/cruz.svg": btnHamburguesa.children[0].src = "./imagenes/hamburguesa.svg"
+  menuHamb.classList.toggle("desapareser")
+  btnHamburguesa.classList.toggle("rotar")
 });
 
 
@@ -17,31 +26,20 @@ function cargar() {
   if (progreso < 100) {
     progreso += 1;
     percentage.textContent = `${progreso}%`;
-    setTimeout(cargar, 20); // Simula la carga
+    setTimeout(cargar, 20);
   }
-  if(progreso == 100) spinner.classList.add("hide")
+  if (progreso == 100) spinner.classList.add("hide")
 }
 
 let spinner = document.querySelector(".spinner-container");
 let progreso = 0;
 const percentage = document.getElementById("percentage");
 
-
-setTimeout(function () {
-  var loaderContainer = document.querySelector(".loader-container");
-  loaderContainer.style.display = "none";
-}, 2000);
-
-//MENU USUARIO
-let btnUsuario = document.querySelector("#btn-usuario");
-let menuUsuario = document.querySelector(".menu-usuario");
-btnUsuario.addEventListener("click", () => {
-    menuUsuario.classList.toggle("desapareser")
-    btnUsuario.children[1].classList.toggle("rotar")
-});
-
-
 cargar();
+
+
+
+
 
 
 // FUNCION DE CARRUSEL
@@ -72,5 +70,7 @@ carruseles.forEach((carrusel) => {
 });
 
 // Hamburguesa menu
+
+
 
 

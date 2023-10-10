@@ -4,42 +4,42 @@ if (window.location.pathname.split("/").pop() == "index.html" || window.location
   window.location.href = "login.html"
 }
 
-
-const btnHamburguesa = document.querySelector('.btn-menu');
-btnHamburguesa.addEventListener('click', () => {
-  btnHamburguesa.children[0].src = "./imagenes/hamburguesa.svg"
-  btnHamburguesa.children[0].src = "./imagenes/cruz.svg"
-});
-
-
-// //PANTALLA DE CARGA
-// function cargar() {
-//   if (progreso < 100) {
-//     progreso += 1;
-//     percentage.textContent = `${progreso}%`;
-//     setTimeout(cargar, 20); // Simula la carga
-//   }
-//   if (progreso == 100) spinner.classList.add("hide")
-// }
-
-// let spinner = document.querySelector(".spinner-container");
-// let progreso = 0;
-// const percentage = document.getElementById("percentage");
-
-// cargar();
-
-setTimeout(function () {
-  var loaderContainer = document.querySelector(".loader-container");
-  loaderContainer.style.display = "none";
-}, 5000);
-
 //MENU USUARIO
-let btnUsuario = document.querySelector("#btn-usuario");
-let menuUsuario = document.querySelector(".menu-usuario");
+const btnUsuario = document.querySelector("#btn-usuario");
+const menuUsuario = document.querySelector(".menu-usuario");
 btnUsuario.addEventListener("click", () => {
   menuUsuario.classList.toggle("desapareser")
   btnUsuario.children[1].classList.toggle("rotar")
 });
+
+const btnHamburguesa = document.querySelector('.btn-menu');
+const menuHamb = document.querySelector('.hambMenu')
+btnHamburguesa.addEventListener('click', () => {
+  console.log( btnHamburguesa.children[0].src.split("/").pop() )
+  btnHamburguesa.children[0].src.split("/").pop()  == "hamburguesa.svg" ? btnHamburguesa.children[0].src = "./imagenes/cruz.svg": btnHamburguesa.children[0].src = "./imagenes/hamburguesa.svg"
+  menuHamb.classList.toggle("desapareser")
+  console.log(btnHamburguesa)
+  btnHamburguesa.classList.toggle("rotar")
+});
+
+
+//PANTALLA DE CARGA
+function cargar() {
+  if (progreso < 100) {
+    progreso += 1;
+    percentage.textContent = `${progreso}%`;
+    setTimeout(cargar, 20); // Simula la carga
+  }
+  if (progreso == 100) spinner.classList.add("hide")
+}
+
+let spinner = document.querySelector(".spinner-container");
+let progreso = 0;
+const percentage = document.getElementById("percentage");
+
+cargar();
+
+
 
 
 
