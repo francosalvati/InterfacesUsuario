@@ -28,7 +28,6 @@
 
 * {
     box-sizing: border-box;
-    color: var(--color-blanco);
     margin: 0;
     padding: 0;
 }
@@ -67,6 +66,7 @@ button {
 }
 
 body {
+    color: var(--color-blanco);
     background-color: var(--color-primario-S2);
 }
 
@@ -78,6 +78,13 @@ ul {
 
 /* Acciones */
 
+.aparecer{
+    transform: scale(1);
+}
+
+.rotar{
+    transform: rotate(180deg);
+}
 .borroso {
     animation: refresco 500ms;
 }
@@ -241,6 +248,24 @@ ul {
     z-index: 10000;
 }
 
+.loader {
+    border: 8px solid var(--color-blanco);
+    border-top: 8px solid var(--color-acento);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* HOME MOBILE */
 .container {
     display: grid;
@@ -286,6 +311,7 @@ ul {
 }
 
 .accionesUsuario {
+
     display: flex;
     gap: 12px;
 }
@@ -323,22 +349,33 @@ ul {
     height: 24px;
 }
 
+.btn-menu{
+    cursor: pointer;
+}
+
 .menu-usuario {
-    padding: 30px;
     background-image: linear-gradient(to right, var(--color-primario-L2), var(--color-primario-S2));
+    border-radius: 10px;
+    box-shadow: var(--elevacion1);
+    color: var(--color-blanco);
     overflow: hidden;
-    top: 50px;
     right: 0;
-    transition: 500ms ease-in-out;
     position: absolute;
+    padding: 30px;
+    top: 50px;
     transform: translatey(0px);
+    transition: 500ms ease-in-out;
     width: 400px;
     z-index: 5000;
+}
+.menu-usuario a{
+    color: var(--color-blanco);
 }
 
 .desapareser {
     opacity: 0;
     transform: translatey(-50px);
+    z-index: -100;
 }
 
 .menu-usuario li svg {
@@ -351,9 +388,15 @@ ul {
     width: 70px;
 }
 
-#btn-usuario {
+.desplegable-usuario {
     position: relative;
 }
+#btn-usuario img{
+    cursor: pointer;
+    transition: 300ms;
+}
+
+
 
 /* Hero */
 .hero {
@@ -868,6 +911,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 .input-rapido {
+    color: #000;
     border: none;
     border-radius: 5px;
     padding: 4px;

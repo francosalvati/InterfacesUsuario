@@ -5,14 +5,11 @@ if (window.location.pathname.split("/").pop() == "login.html") {
     let form = document.querySelector(".form-login");
 
     function logueado(e) {
-        console.log(e.submitter)
         e.submitter.classList.toggle("success")
-        setTimeout(() => {
-        })
 
-        // setTimeout(() => {
-        //     window.location.href = "index.html"
-        // }, 5000);
+        setTimeout(() => {
+            window.location.href = "home.html"
+        }, 500);
     }
 
     function goLogin() {
@@ -157,7 +154,3 @@ if (window.location.pathname.split("/").pop() == "login.html") {
 
 // LOADER
 
-setTimeout(function () {
-    var loaderContainer = document.querySelector(".loader-container");
-    loaderContainer.style.display = "none";
-}, 5000);

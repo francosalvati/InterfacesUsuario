@@ -1,11 +1,21 @@
 "use strict";
 
+if(window.location.pathname.split("/").pop() == "index.html" || window.location.pathname.split("/").pop() == "" ){
+  window.location.href = "login.html"
+}
+
+
+const btnHamburguesa = document.querySelector('.btn-menu');
+btnHamburguesa.addEventListener('click', () => {
+    btnHamburguesa.children[0].src="./imagenes/hamburguesa.svg"
+    btnHamburguesa.children[0].src="./imagenes/cruz.svg"
+});
+
+/*
 //PANTALLA DE CARGA
 function cargar() {
   if (progreso < 100) {
     progreso += 1;
-    spinnerInner.style.transform = `rotate(${progreso * 3.6}deg)`;
-    progressBar.style.width = `${progreso}%`;
     percentage.textContent = `${progreso}%`;
     setTimeout(cargar, 20); // Simula la carga
   }
@@ -14,20 +24,24 @@ function cargar() {
 
 let spinner = document.querySelector(".spinner-container");
 let progreso = 0;
-const spinnerInner = document.getElementById("spinnerInner");
-const progressBar = document.getElementById("progressBar");
 const percentage = document.getElementById("percentage");
 
+
+setTimeout(function () {
+  var loaderContainer = document.querySelector(".loader-container");
+  loaderContainer.style.display = "none";
+}, 2000);
 
 //MENU USUARIO
 let btnUsuario = document.querySelector("#btn-usuario");
 let menuUsuario = document.querySelector(".menu-usuario");
 btnUsuario.addEventListener("click", () => {
     menuUsuario.classList.toggle("desapareser")
+    btnUsuario.children[1].classList.toggle("rotar")
 });
 
 
-
+cargar();
 
 
 // FUNCION DE CARRUSEL
@@ -57,8 +71,8 @@ carruseles.forEach((carrusel) => {
   }
 });
 
+// Hamburguesa menu
 
 
 
-
-
+*/
