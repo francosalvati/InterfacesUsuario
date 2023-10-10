@@ -1,47 +1,47 @@
 "use strict";
 
-if(window.location.pathname.split("/").pop() == "index.html" || window.location.pathname.split("/").pop() == "" ){
+if (window.location.pathname.split("/").pop() == "index.html" || window.location.pathname.split("/").pop() == "") {
   window.location.href = "login.html"
 }
 
 
 const btnHamburguesa = document.querySelector('.btn-menu');
 btnHamburguesa.addEventListener('click', () => {
-    btnHamburguesa.children[0].src="./imagenes/hamburguesa.svg"
-    btnHamburguesa.children[0].src="./imagenes/cruz.svg"
+  btnHamburguesa.children[0].src = "./imagenes/hamburguesa.svg"
+  btnHamburguesa.children[0].src = "./imagenes/cruz.svg"
 });
 
-/*
-//PANTALLA DE CARGA
-function cargar() {
-  if (progreso < 100) {
-    progreso += 1;
-    percentage.textContent = `${progreso}%`;
-    setTimeout(cargar, 20); // Simula la carga
-  }
-  if(progreso == 100) spinner.classList.add("hide")
-}
 
-let spinner = document.querySelector(".spinner-container");
-let progreso = 0;
-const percentage = document.getElementById("percentage");
+// //PANTALLA DE CARGA
+// function cargar() {
+//   if (progreso < 100) {
+//     progreso += 1;
+//     percentage.textContent = `${progreso}%`;
+//     setTimeout(cargar, 20); // Simula la carga
+//   }
+//   if (progreso == 100) spinner.classList.add("hide")
+// }
 
+// let spinner = document.querySelector(".spinner-container");
+// let progreso = 0;
+// const percentage = document.getElementById("percentage");
+
+// cargar();
 
 setTimeout(function () {
   var loaderContainer = document.querySelector(".loader-container");
   loaderContainer.style.display = "none";
-}, 2000);
+}, 5000);
 
 //MENU USUARIO
 let btnUsuario = document.querySelector("#btn-usuario");
 let menuUsuario = document.querySelector(".menu-usuario");
 btnUsuario.addEventListener("click", () => {
-    menuUsuario.classList.toggle("desapareser")
-    btnUsuario.children[1].classList.toggle("rotar")
+  menuUsuario.classList.toggle("desapareser")
+  btnUsuario.children[1].classList.toggle("rotar")
 });
 
 
-cargar();
 
 
 // FUNCION DE CARRUSEL
@@ -75,4 +75,4 @@ carruseles.forEach((carrusel) => {
 
 
 
-*/
+
