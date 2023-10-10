@@ -11,7 +11,7 @@ btnHamburguesa.addEventListener('click', () => {
     btnHamburguesa.children[0].src="./imagenes/cruz.svg"
 });
 
-/*
+
 //PANTALLA DE CARGA
 function cargar() {
   if (progreso < 100) {
@@ -74,5 +74,3 @@ carruseles.forEach((carrusel) => {
 // Hamburguesa menu
 
 
-
-*/
