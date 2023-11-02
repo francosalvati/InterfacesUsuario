@@ -849,7 +849,7 @@ ul {
         width: 360px;
         height: 216px;
     }
-
+    
     /* Footer */
 
     .info {
@@ -882,8 +882,6 @@ ul {
 .juego-container .juego {
     background: #fff;
     background-image: #fff;
-    height: 662px;
-    width: 1500px;
 }
 
 .juego-container .rotulador {
@@ -1041,4 +1039,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .hide {
     display: none;
+}
+
+
+.testCOlor{
+    color: rgba(185, 193, 40, 0.373)
 }

@@ -21,7 +21,11 @@ btnHamburguesa.addEventListener('click', () => {
 });
 
 
-//PANTALLA DE CARGA
+//PANTALLA DE CARGAif
+if (window.location.pathname.split("/").pop() == "index.html" || window.location.pathname.split("/").pop() == "") {
+
+
+
 function cargar() {
   if (progreso < 100) {
     progreso += 1;
@@ -69,13 +73,6 @@ carruseles.forEach((carrusel) => {
   }
 });
 
-// Canvas
 
-let canvas = document.querySelector('.canvas')
-let ctx = canvas.getContext('2d')
-
-
-
-
-
+}
 
