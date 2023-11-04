@@ -12,8 +12,16 @@ class PiezaTablero extends Pieza {
         return image
     }
 
+    getFicha(){
+        return this.ficha
+    }
+
+    getY(){
+        return this.y + this.h / 2
+    }
+
     getFicha() {
-        !this.ficha === null
+        return this.ficha === null
     }
     setFicha(ficha) {
         this.ficha = ficha

@@ -1,12 +1,14 @@
 class Ficha extends Pieza {
 
-    constructor(ctx, x, y, w, h, jugador, color) {
+    constructor(id, ctx, x, y, w, h, jugador, color) {
         super(ctx, x, y, w, h)
         this.radio = w / 2
         this.jugador = jugador
         this.color = color
         this.posXfin = x
         this.posYfin = y
+        this.id = id
+        this.transferible = true
     }
 
     setColor(color){
@@ -23,12 +25,20 @@ class Ficha extends Pieza {
         this.ctx.closePath()
     }
 
+    getJugador(){
+        return this.jugador
+    }
+
     getX(){
         return this.x
     }
 
     getY(){
         return this.y
+    }
+
+    getTransferible(){
+        return this.transferible
     }
 
     getFicha(posX, posY, jugador) {
@@ -38,10 +48,20 @@ class Ficha extends Pieza {
         }
         return null
     }
+    
+    arrastrarPos(posX, posY){
+            this.x = posX
+            this.y = posY
+        
+    }
 
-    cambiarPos(posX, posY){
-        this.x = posX
+    aumentarPosY(){
+        this.y += 10
+    }
+
+    setY(posY){
         this.y = posY
+        this.posYfin = this.y
     }
 
     soltarFicha(pos){
@@ -50,6 +70,7 @@ class Ficha extends Pieza {
             this.y = pos[1]
             this.posXfin = this.x
             this.posYfin = this.y
+            this.transferible = false
             return true
         }
         else{
