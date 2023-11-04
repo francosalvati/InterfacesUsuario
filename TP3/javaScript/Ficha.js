@@ -17,16 +17,23 @@ class Ficha extends Pieza {
         nColor?
         this.ctx.fillStyle = nColor:
         this.ctx.fillStyle = this.color
-
         this.ctx.beginPath()
         this.ctx.arc(this.x, this.y, this.radio, 0, Math.PI * 2)
         this.ctx.fill()
         this.ctx.closePath()
     }
 
-    ClickOn(posX, posY) {
+    getX(){
+        return this.x
+    }
+
+    getY(){
+        return this.y
+    }
+
+    getFicha(posX, posY, jugador) {
         let dist = Math.sqrt(Math.pow(posX - this.x, 2) + Math.pow(posY - this.y, 2))
-        if (dist <= this.radio) {
+        if (dist <= this.radio && this.jugador == jugador) {
             return this
         }
         return null
@@ -35,17 +42,20 @@ class Ficha extends Pieza {
     cambiarPos(posX, posY){
         this.x = posX
         this.y = posY
-        this.draw()
     }
 
-    soltarFicha(){
-        // this.x = posX
-        // this.y = posY
-
-        // this.draw()
-    }
-
-    volverPos(){
-
+    soltarFicha(pos){
+        if(!pos.length < 1){
+            this.x = pos[0]
+            this.y = pos[1]
+            this.posXfin = this.x
+            this.posYfin = this.y
+            return true
+        }
+        else{
+            this.x = this.posXfin
+            this.y = this.posYfin
+            return false
+        }
     }
 }

@@ -8,8 +8,13 @@ class CajadeJuego extends Pieza{
         this.ctx.fillRect(this.x, this.y, this.w, this.h)
     }
     checkCaja(posX, posY){
+        let ret = []
         if(this.x + this.w > posX && this.x < posX && this.y + this.h > posY && this.y < posY){
-
+            ret = [this.x + this.w /2, this.y + this.h /2]
+            return ret
+        }
+        else{
+            return ret
         }
     }
 
