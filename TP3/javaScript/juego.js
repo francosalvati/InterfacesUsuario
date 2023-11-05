@@ -26,15 +26,21 @@ canvas.addEventListener("mousemove", (e) => {
     }
 })
 
-
 canvas.addEventListener('mouseup', (e) => {
     if (fichaActiva) {
-        if(fichaActiva.soltarFicha(tablero.checkSoltar(fichaActiva))){
-            tablero.setTurno()
+        const ficha = fichaActiva; // Almacena la ficha activa en una variable local
+        if (ficha.soltarFicha(tablero.checkSoltar(ficha))) {
+            fichaActiva = null;
+            setTimeout(() => {
+                tablero.handleMove(tablero.turno); // Llama a handleMove después de un pequeño retraso
+                tablero.setTurno(); // Cambia el turno al siguiente jugador después de verificar el movimiento
+            }, 800);
         }
     }
-    fichaActiva = null
-})
+});
+
+
+
 
 
 function drawAllMove() {

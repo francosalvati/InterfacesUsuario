@@ -10,7 +10,7 @@ class Tablero extends Pieza {
         this.turno = 1
         this.cajaDeJuego = []
         this.images = ['../imagenes/Logo.png']
-        this.linea = 4 // linea
+        this.linea = 4
     }
 
     //Creacion y Dibujo
@@ -35,8 +35,8 @@ class Tablero extends Pieza {
     crearFichas() {
         for (let i = 0; i < this.cantidadFichas; i++) {
             this.fichas.length % 2 != 0 ?
-                this.fichas.push(new Ficha(i, this.ctx, 100 + i * 7, 550, 40, 40, 1)) :
-                this.fichas.push(new Ficha(i, this.ctx, 500 + i * 7, 550, 40, 40, 2))
+                this.fichas.push(new Ficha(i, this.ctx, 100 + i * 7, 550, 40, 40, 1, '/TP3/imagenes/jhambur.png')) :
+                this.fichas.push(new Ficha(i, this.ctx, 500 + i * 7, 550, 40, 40, 2, '/TP3/imagenes/jpizza.png'))
         }
         this.drawFichas()
     }
@@ -80,10 +80,6 @@ class Tablero extends Pieza {
 
     setTurno() {
         this.turno === 1 ? this.turno = 2 : this.turno = 1
-    }
-
-    checkGanador(i, j, ficha) {
-        // buscar adyacentes, restar posiciones de adyacente vs actual e ir sumando
     }
 
     comparacionFicha(jugador, ficha) {
@@ -145,5 +141,103 @@ class Tablero extends Pieza {
         }
     }
 
-}
+    hayGanador(jugador) {
+        if (this.checkGanador(jugador)) {
+            alert(`¡Jugador ${jugador} ha ganado!`);
+            // Puedes realizar acciones adicionales aquí, como reiniciar el juego.
+        }
+    }
 
+    checkGanador(jugador) {
+        if (
+            this.checkFilas(jugador) ||
+            this.checkColumnas(jugador) ||
+            this.checkDiagonales(jugador)
+        ) {
+            return true; // Devuelve true si el jugador ha ganado
+        }
+        return false; // Devuelve false si no hay ganador
+    }
+
+    handleMove(jugador) {
+        this.hayGanador(jugador);
+    }
+
+    checkFilas(jugador) {
+        for (let i = 0; i < this.tamanioX; i++) {
+            for (let j = 0; j <= this.tamanioY - this.linea; j++) {
+                let contador = 0;
+                for (let k = 0; k < this.linea; k++) {
+                    if (
+                        this.tablero[i][j + k].getFichaTablero()?.getJugador() === jugador
+                    ) {
+                        contador++;
+                    }
+                }
+                if (contador === this.linea) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    checkColumnas(jugador) {
+        for (let j = 0; j < this.tamanioY; j++) {
+            for (let i = 0; i <= this.tamanioX - this.linea; i++) {
+                let contador = 0;
+                for (let k = 0; k < this.linea; k++) {
+                    if (
+                        this.tablero[i + k][j].getFichaTablero()?.getJugador() === jugador
+                    ) {
+                        contador++;
+                    }
+                }
+                if (contador === this.linea) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    checkDiagonales(jugador) {
+        // Verificar diagonales descendentes
+        for (let i = 0; i <= this.tamanioX - this.linea; i++) {
+            for (let j = 0; j <= this.tamanioY - this.linea; j++) {
+                let contador = 0;
+                for (let k = 0; k < this.linea; k++) {
+                    if (
+                        this.tablero[i + k][j + k].getFichaTablero()?.getJugador() ===
+                        jugador
+                    ) {
+                        contador++;
+                    }
+                }
+                if (contador === this.linea) {
+                    return true;
+                }
+            }
+        }
+
+        // Verificar diagonales ascendentes
+        for (let i = 0; i <= this.tamanioX - this.linea; i++) {
+            for (let j = this.linea - 1; j < this.tamanioY; j++) {
+                let contador = 0;
+                for (let k = 0; k < this.linea; k++) {
+                    if (
+                        this.tablero[i + k][j - k].getFichaTablero()?.getJugador() ===
+                        jugador
+                    ) {
+                        contador++;
+                    }
+                }
+                if (contador === this.linea) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+}
