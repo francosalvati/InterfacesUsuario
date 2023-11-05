@@ -12,7 +12,7 @@ class PiezaTablero extends Pieza {
         return image
     }
 
-    getFicha(){
+    getFichaTablero(){
         return this.ficha
     }
 
@@ -20,7 +20,7 @@ class PiezaTablero extends Pieza {
         return this.y + this.h / 2
     }
 
-    getFicha() {
+    tieneFicha() {
         return this.ficha === null
     }
     setFicha(ficha) {

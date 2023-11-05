@@ -82,23 +82,12 @@ class Tablero extends Pieza {
         this.turno === 1 ? this.turno = 2 : this.turno = 1
     }
 
-    checkGanador(index, j, ficha) {
-        let jugador = ficha.getJugador()
-        let suma = 0
-        let contador = 1
-        while (suma < this.linea) {
-            if (this.comparacionFicha(jugador, this.tablero[index - suma, j].getFicha())) {
-
-            }
-            suma++
-        }
-        if (contador >= this.linea) {
-            console.log('este jugador gano')
-        }
+    checkGanador(i, j, ficha) {
+        // buscar adyacentes, restar posiciones de adyacente vs actual e ir sumando
     }
 
     comparacionFicha(jugador, ficha) {
-        jugador === ficha.getJugador()
+        return jugador === ficha.getJugador()
     }
 
     checkSoltar(ficha) {
@@ -117,7 +106,7 @@ class Tablero extends Pieza {
     RecorrerColumna(index, ficha) {
         let j = this.tamanioY - 1
         while (j > 0) {
-            if (this.tablero[index][j].getFicha()) {
+            if (this.tablero[index][j].tieneFicha()) {
                 this.tablero[index][j].setFicha(ficha)
                 this.animacionFicha(ficha, this.tablero[index][j].getY());
                 this.checkGanador(index, j, ficha)
