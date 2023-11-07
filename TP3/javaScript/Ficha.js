@@ -3,35 +3,34 @@ class Ficha extends Pieza {
         super(ctx, x, y, w, h);
         this.radio = w / 1.5;
         this.jugador = jugador;
-        this.imagen = new Image();
-        this.imagen.src = imagenSrc;
-        this.imagenCargada = false; // Asegurarse de que la imagen esté cargada antes de dibujarla
-        this.imagen.onload = () => {
-            this.imagenCargada = true;
-            // Llamar a una función para dibujar la imagen después de que se haya cargado
-            this.draw();
-        };
+        this.img = this.getImg(imagenSrc)
+        this.imgLoaded = false;
         this.posXfin = x;
         this.posYfin = y;
         this.id = id;
         this.transferible = true;
-        this.imagenEscala = 1.4; // Escala inicial de la imagen
     }
+
+    getImg(imagenSrc) {
+        let image = new Image();
+        image.src = imagenSrc;
+        image.onload = () => {
+            // Marcar la imagen como cargada cuando se complete la carga
+            this.imgLoaded = true;
+        };
+        return image;
+    }
+
 
     setColor(color) {
         this.color = color
     }
 
     draw() {
-        if (this.imagenCargada) {
-            const imagenAncho = this.w * this.imagenEscala;
-            const imagenAlto = this.h * this.imagenEscala;
-            this.ctx.drawImage(this.imagen, this.x - imagenAncho / 2, this.y - imagenAlto / 2, imagenAncho, imagenAlto);
-        }
-    }
-
-    setImagenEscala(escala) {
-        this.imagenEscala = escala;
+            // Si la imagen ya está cargada, dibújala directamente
+            if(this.imgLoaded ){
+                this.ctx.drawImage(this.img, this.x - this.radio, this.y - this.radio, this.radio * 2, this.radio * 2);
+            }
     }
 
     getJugador() {

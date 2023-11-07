@@ -1,6 +1,6 @@
 class PiezaTablero extends Pieza {
 
-    constructor(ctx, x, y, w, h, img) {
+    constructor(ctx, x, y, w, h) {
         super(ctx, x, y, w, h)
         this.img = this.getImg()
         this.ficha = null

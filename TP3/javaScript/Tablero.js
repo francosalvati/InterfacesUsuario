@@ -38,18 +38,12 @@ class Tablero extends Pieza {
                 this.fichas.push(new Ficha(i, this.ctx, 100 + i * 7, 550, 40, 40, 1, '/TP3/imagenes/jhambur.png')) :
                 this.fichas.push(new Ficha(i, this.ctx, 500 + i * 7, 550, 40, 40, 2, '/TP3/imagenes/jpizza.png'))
         }
-        this.drawFichas()
     }
 
 
     drawFichas() {
-        for (const ficha of this.fichas) {
-            if (ficha.jugador == 1) {
-                ficha.setColor('blue')
-            } else {
-                ficha.setColor('green')
-            }
-            ficha.draw()
+        for (let i = 0; i < this.cantidadFichas; i++) {
+            this.fichas[i].draw()
         }
     }
 

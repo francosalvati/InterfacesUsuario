@@ -5,7 +5,6 @@ let ctx = canvas.getContext('2d')
 let tablero = new Tablero(ctx, 200, 100, 70, 70, 7, 6, 'aaa')
 
 tablero.crearTablero()
-tablero.draw()
 tablero.crearFichas()
 
 let fichaActiva = null
@@ -28,20 +27,21 @@ canvas.addEventListener("mousemove", (e) => {
 
 canvas.addEventListener('mouseup', (e) => {
     if (fichaActiva) {
-        const ficha = fichaActiva; // Almacena la ficha activa en una variable local
-        if (ficha.soltarFicha(tablero.checkSoltar(ficha))) {
-            fichaActiva = null;
+        if (fichaActiva.soltarFicha(tablero.checkSoltar(fichaActiva))) {
             setTimeout(() => {
-                tablero.handleMove(tablero.turno); // Llama a handleMove después de un pequeño retraso
-                tablero.setTurno(); // Cambia el turno al siguiente jugador después de verificar el movimiento
+                tablero.handleMove(tablero.turno);
+                tablero.setTurno(); 
             }, 800);
         }
+        fichaActiva = null;
     }
+    drawAll()
+    console.log(tablero.fichas)
 });
 
 
-
-
+drawAll()
+console.log(tablero.fichas)
 
 function drawAllMove() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
