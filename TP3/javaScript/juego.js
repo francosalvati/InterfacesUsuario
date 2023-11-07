@@ -14,13 +14,13 @@ document.getElementById("aplicarCambios").addEventListener("click", function () 
     const columnasTablero = parseInt(document.getElementById("columnasTablero").value);
 
     // Aplicar los cambios a los parámetros del juego
-    tablero.actualizarParametros(fichaSize, lineasGanar, filasTablero, columnasTablero);
+    tablero.actualizarParametros(fichaSize, lineasGanar, filasTablero, columnasTablero)
+    drawAll();
 });
 
 tablero.crearTablero()
 tablero.crearFichas()
 drawAll();
-
 let fichaActiva = null
 
 canvas.addEventListener("mousedown", (e) => {
@@ -54,13 +54,16 @@ canvas.addEventListener('mouseup', (e) => {
 
 function drawAllMove() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "orange";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     tablero.draw()
     tablero.drawCajadeJuego()
     tablero.drawFichas()
 }
 
 function drawAll() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "orange";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     tablero.drawFichas()
     tablero.draw()
 }

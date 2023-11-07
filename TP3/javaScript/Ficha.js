@@ -1,7 +1,8 @@
 class Ficha extends Pieza {
-    constructor(id, ctx, x, y, w, h, jugador, imagenSrc) {
+    
+    constructor(id, ctx, x, y, w, h, jugador, imagenSrc, color) {
         super(ctx, x, y, w, h);
-        this.radio = w / 1.5;
+        this.radio = w / 2;
         this.jugador = jugador;
         this.img = new Image();
         this.imgLoaded = false;
@@ -10,6 +11,7 @@ class Ficha extends Pieza {
         this.posYfin = y;
         this.id = id;
         this.transferible = true;
+        this.color = color
 
         // Agregar un retraso minimo antes de cargar la imagen para que carguen correctamente
         setTimeout(() => {
@@ -18,7 +20,7 @@ class Ficha extends Pieza {
                 this.draw(); // Llama a la función draw cuando la imagen esté cargada
             };
             this.img.src = imagenSrc; // Cargar la imagen después del retraso
-        }, 10);
+        }, 100);
     }
 
     getImg(imagenSrc) {
@@ -28,8 +30,18 @@ class Ficha extends Pieza {
     }
 
     draw() {
+        this.ctx.beginPath()
+        this.ctx.arc(this.x, this.y, this.radio, 0, 2 * Math.PI)
+        this.ctx.strokeStyle = this.color == '#fff'? '#000' : "#fff";
+        this.ctx.fillStyle = this.color
+        this.ctx.fill()
+        this.ctx.stroke()
+        this.ctx.closePath()
         if (this.imgLoaded) {
-            this.ctx.drawImage(this.img, this.x - this.radio, this.y - this.radio, this.radio * 2, this.radio * 2);
+            let centerX = this.x - this.radio / 2
+            let centerY = this.y - this.radio / 2
+            console.log(centerX, centerY, this.x, this. y)
+            this.ctx.drawImage(this.img, centerX, centerY, this.radio , this.radio );
         }
     }
 

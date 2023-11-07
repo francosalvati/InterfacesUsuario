@@ -35,21 +35,23 @@ class Tablero extends Pieza {
     crearFichas() {
         for (let i = 0; i < this.cantidadFichas; i++) {
             this.fichas.length % 2 != 0 ?
-                this.fichas.push(new Ficha(i, this.ctx, 420 + i * 6, 700, 50, 50, 1, '/TP3/imagenes/jhambur.png')) :
-                this.fichas.push(new Ficha(i, this.ctx, 910 - i * 6, 700, 50, 50, 2, '/TP3/imagenes/jpizza.png'))
+                this.fichas.push(new Ficha(i, this.ctx, 420 + i * 6, 700, 50, 50, 1, '/TP3/imagenes/burger.png', '#000')):
+                this.fichas.push(new Ficha(i, this.ctx, 910 - i * 6, 700, 50, 50, 2, '/TP3/imagenes/pizza.png', '#fff'))
         }
     }
 
 
     drawFichas() {
+        console.log(this.fichas)
         for (let i = 0; i < this.cantidadFichas; i++) {
             this.fichas[i].draw()
         }
     }
 
-    draw() {
+    draw(){
         for (let i = 0; i < this.tamanioX; i++) {
             for (let j = 0; j < this.tamanioY; j++) {
+                console.log(this.tablero[i][j]);
                 this.tablero[i][j].draw()
             }
         }
@@ -250,8 +252,8 @@ class Tablero extends Pieza {
 
     actualizarParametros(fichaSize, lineasGanar, filasTablero, columnasTablero) {
         // Actualiza los parámetros del juego según los valores proporcionados
-        this.w = fichaSize;
-        this.h = fichaSize;
+        this.w = 1500/3 / filasTablero;
+        this.h = 1500/3 / filasTablero;
         this.linea = lineasGanar;
         this.tamanioX = filasTablero;
         this.tamanioY = columnasTablero;
@@ -259,8 +261,10 @@ class Tablero extends Pieza {
         // Vuelve a crear el tablero y las fichas con los nuevos parámetros
         this.tablero = [];
         this.fichas = [];
+        this.cajaDeJuego = []
         this.crearTablero();
         this.crearFichas();
+        this.setCajadeJuego();
     }
 
 }
