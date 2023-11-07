@@ -35,8 +35,8 @@ class Tablero extends Pieza {
     crearFichas() {
         for (let i = 0; i < this.cantidadFichas; i++) {
             this.fichas.length % 2 != 0 ?
-                this.fichas.push(new Ficha(i, this.ctx, 100 + i * 7, 550, 40, 40, 1, '/TP3/imagenes/jhambur.png')) :
-                this.fichas.push(new Ficha(i, this.ctx, 500 + i * 7, 550, 40, 40, 2, '/TP3/imagenes/jpizza.png'))
+                this.fichas.push(new Ficha(i, this.ctx, 420 + i * 6, 700, 50, 50, 1, '/TP3/imagenes/jhambur.png')) :
+                this.fichas.push(new Ficha(i, this.ctx, 910 - i * 6, 700, 50, 50, 2, '/TP3/imagenes/jpizza.png'))
         }
     }
 
@@ -138,7 +138,6 @@ class Tablero extends Pieza {
     hayGanador(jugador) {
         if (this.checkGanador(jugador)) {
             alert(`¡Jugador ${jugador} ha ganado!`);
-            // Puedes realizar acciones adicionales aquí, como reiniciar el juego.
         }
     }
 
@@ -148,9 +147,9 @@ class Tablero extends Pieza {
             this.checkColumnas(jugador) ||
             this.checkDiagonales(jugador)
         ) {
-            return true; // Devuelve true si el jugador ha ganado
+            return true;
         }
-        return false; // Devuelve false si no hay ganador
+        return false;
     }
 
     handleMove(jugador) {
@@ -234,4 +233,34 @@ class Tablero extends Pieza {
 
         return false;
     }
+
+    iniciarTemporizador() {
+        tiempoElement.textContent = tiempoRestante;
+
+        if (tiempoRestante === 0) {
+            // Aquí puedes implementar lo que sucede cuando se acaba el tiempo (por ejemplo, terminar el juego)
+            alert('¡Tiempo agotado!');
+            juegoEnCurso = false;
+            // Restablece el tiempo o realiza otras acciones necesarias
+        } else {
+            tiempoRestante--; // Reduce el tiempo restante en 1 segundo
+            setTimeout(actualizarTemporizador, 1000); // Llama a esta función nuevamente después de 1 segundo
+        }
+    }
+
+    actualizarParametros(fichaSize, lineasGanar, filasTablero, columnasTablero) {
+        // Actualiza los parámetros del juego según los valores proporcionados
+        this.w = fichaSize;
+        this.h = fichaSize;
+        this.linea = lineasGanar;
+        this.tamanioX = filasTablero;
+        this.tamanioY = columnasTablero;
+
+        // Vuelve a crear el tablero y las fichas con los nuevos parámetros
+        this.tablero = [];
+        this.fichas = [];
+        this.crearTablero();
+        this.crearFichas();
+    }
+
 }

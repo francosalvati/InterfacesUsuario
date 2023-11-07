@@ -3,34 +3,34 @@ class Ficha extends Pieza {
         super(ctx, x, y, w, h);
         this.radio = w / 1.5;
         this.jugador = jugador;
-        this.img = this.getImg(imagenSrc)
+        this.img = new Image();
         this.imgLoaded = false;
+        this.img.src = imagenSrc;
         this.posXfin = x;
         this.posYfin = y;
         this.id = id;
         this.transferible = true;
+
+        // Agregar un retraso minimo antes de cargar la imagen para que carguen correctamente
+        setTimeout(() => {
+            this.img.onload = () => {
+                this.imgLoaded = true;
+                this.draw(); // Llama a la función draw cuando la imagen esté cargada
+            };
+            this.img.src = imagenSrc; // Cargar la imagen después del retraso
+        }, 10);
     }
 
     getImg(imagenSrc) {
         let image = new Image();
         image.src = imagenSrc;
-        image.onload = () => {
-            // Marcar la imagen como cargada cuando se complete la carga
-            this.imgLoaded = true;
-        };
         return image;
     }
 
-
-    setColor(color) {
-        this.color = color
-    }
-
     draw() {
-            // Si la imagen ya está cargada, dibújala directamente
-            if(this.imgLoaded ){
-                this.ctx.drawImage(this.img, this.x - this.radio, this.y - this.radio, this.radio * 2, this.radio * 2);
-            }
+        if (this.imgLoaded) {
+            this.ctx.drawImage(this.img, this.x - this.radio, this.y - this.radio, this.radio * 2, this.radio * 2);
+        }
     }
 
     getJugador() {

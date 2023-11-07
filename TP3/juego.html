@@ -73,16 +73,36 @@
                             </li>
                         </ul>
                         <ul class="categorias">
-                            <li class="item"><p>Accion</p></li>
-                            <li class="item"><p>Aventura</p></li>
-                            <li class="item"><p>Arcade</p></li>
-                            <li class="item"><p>Deporte</p></li>
-                            <li class="item"><p>Estrategia</p></li>
-                            <li class="item"><p>Cooperativo</p></li>
-                            <li class="item"><p>Supervivencia</p></li>
-                            <li class="item"><p>Simulacion</p></li>
-                            <li class="item"><p>SuperHeroes</p></li>
-                            <li class="item"><p>Terror</p></li>
+                            <li class="item">
+                                <p>Accion</p>
+                            </li>
+                            <li class="item">
+                                <p>Aventura</p>
+                            </li>
+                            <li class="item">
+                                <p>Arcade</p>
+                            </li>
+                            <li class="item">
+                                <p>Deporte</p>
+                            </li>
+                            <li class="item">
+                                <p>Estrategia</p>
+                            </li>
+                            <li class="item">
+                                <p>Cooperativo</p>
+                            </li>
+                            <li class="item">
+                                <p>Supervivencia</p>
+                            </li>
+                            <li class="item">
+                                <p>Simulacion</p>
+                            </li>
+                            <li class="item">
+                                <p>SuperHeroes</p>
+                            </li>
+                            <li class="item">
+                                <p>Terror</p>
+                            </li>
                             <li class="item"><b>VER MAS</b></li>
                         </ul>
                     </div>
@@ -182,7 +202,25 @@
                 </span>
                 <h1>Pizzas vs Hamburgesas</h1>
 
-                <canvas class="juego canvas" width="1500px" height="600px">
+                <label for="fichaSize">Tamaño de Fichas:</label>
+                <input type="number" id="fichaSize" value="50"><br>
+
+                <label for="lineasGanar">Líneas para Ganar:</label>
+                <input type="number" id="lineasGanar" value="4"><br>
+
+                <label for="filasTablero">Filas del Tablero:</label>
+                <input type="number" id="filasTablero" value="6"><br>
+
+                <label for="columnasTablero">Columnas del Tablero:</label>
+                <input type="number" id="columnasTablero" value="6"><br>
+
+                <button id="aplicarCambios">Aplicar Cambios</button>
+
+                <div class="temporizador">
+                    <p>Tiempo restante: <span id="tiempo"></span></p>
+                </div>
+
+                <canvas class="juego canvas" width="1500px" height="800px">
                     <div class="icono"></div>
                     <div class="barra-accion"></div>
                 </canvas>
