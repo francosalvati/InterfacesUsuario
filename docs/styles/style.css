@@ -87,9 +87,7 @@ ul {
     transform: rotate(180deg);
 }
 
-.cambiar{
-
-}
+.cambiar {}
 
 .borroso {
     animation: refresco 500ms;
@@ -373,10 +371,11 @@ ul {
     transition: 300ms;
 }
 
-.desplegable-hamburguesa{
+.desplegable-hamburguesa {
     position: relative;
 }
-.hambMenu{
+
+.hambMenu {
     background: #000000b7;
     border: 1px solid #ffffff54;
     border-radius: 5px;
@@ -400,9 +399,11 @@ ul {
     margin: 2px 0;
 }
 
-.hambMenu:hover, .menu-usuario:hover{
+.hambMenu:hover,
+.menu-usuario:hover {
     background: #000000e5;
 }
+
 .menu-usuario {
     background: #000000b7;
     border: 1px solid #ffffff54;
@@ -882,8 +883,6 @@ ul {
 .juego-container .juego {
     background: #fff;
     background-image: #fff;
-    height: 662px;
-    width: 1500px;
 }
 
 .juego-container .rotulador {
@@ -899,14 +898,24 @@ ul {
     padding: 10px;
 }
 
+
+.comentariosFrame2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .form-comentario {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background: var(--color-primario-L1);
     border-radius: 35px;
     margin: auto;
     height: 220px;
-    padding: 20px;
+    padding: 30px;
     position: relative;
-    max-width: 1000px;
+    width: 1000px;
 }
 
 .form-comentario .perfil {
@@ -922,12 +931,79 @@ ul {
     height: 150px;
     padding: 15px 0 0 10px;
     resize: none;
-    width: 100%;
+    width: 500px;
+}
+
+.form-comentario ::placeholder {
+    color: var(--color-blanco);
 }
 
 .form-comentario textarea:focus {
     outline: none;
 }
+
+.form-comentario button {
+    padding: 10px 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    border: none;
+    color: var(--color-blanco);
+    background-color: var(--color-primario);
+}
+
+.form-comentario button:hover {
+    background-color: var(--color-primario-S1);
+    scale: 1.05;
+    cursor: pointer;
+}
+
+.comentarios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.comentario {
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+    height: 120px;
+    background: rgba(217, 217, 217, 0.10);
+    border-radius: 32px;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.comentario .frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    height: 100%;
+    gap: 12px;
+    width: 80%;
+}
+
+.comentario .fecha {
+    display: flex;
+    align-items: end;
+    height: 100%;
+    font-size: 12px;
+}
+
+.comentario .perfil {
+    border-radius: 50%;
+    border: 1px solid var(--color-blanco);
+    height: 50px;
+    width: 50px;
+}
+
 
 /* Login */
 
@@ -1041,4 +1117,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .hide {
     display: none;
+}
+
+
+.testCOlor {
+    color: rgba(185, 193, 40, 0.373)
 }
