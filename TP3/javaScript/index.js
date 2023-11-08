@@ -45,7 +45,6 @@ if (window.location.pathname.split("/").pop() == "index.html" || window.location
 
 
 
-
   // FUNCION DE CARRUSEL
   const carruseles = document.querySelectorAll(".carrusel");
   carruseles.forEach((carrusel) => {
