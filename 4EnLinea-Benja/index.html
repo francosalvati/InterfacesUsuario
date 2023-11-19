@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+
+    <div class="game-container">
+
+        <div id="container-comidas">
+            <img src="./images/4enlinea/hamburguesa.png" id="img-comida1" width="120" height="120" class="img-select">
+            <p>VS</p>
+            <img src="./images/4enlinea/pizza.png" id="img-comida2" width="120" height="120" class="img-select">
+        </div>
+        <p id="timer" style="display: none;">05:00</p>
+        <p id="winner" style="display: none;">
+
+        </p>
+        <form id="miFormulario">
+
+            <label for="opciones">Selecciona tu comida favorita:</label>
+            <br>
+            <select name="comida1" id="comida1">
+                <option value="pizza">Pizza</option>
+                <option value="pollo">Pollo</option>
+                <option value="pan">Pan</option>
+            </select>
+
+            <select name="comida2" id="comida2">
+                <option value="hamburguesa">Hamburguesa</option>
+                <option value="carne">Carne</option>
+                <option value="brocoli">Brocoli</option>
+            </select>
+
+            <br>
+            <label for="opciones">Selecciona el juego:</label>
+            <select id="opciones" class="opciones">
+                <option value="4">4 en Linea</option>
+                <option value="5">5 en Linea</option>
+                <option value="6">6 en Linea</option>
+                <option value="7">7 en Linea</option>
+            </select>
+
+            <div id="playgame">
+                <button type="submit" id="btn-play">JUGAR</button>
+            </div>
+        </form>
+
+        <div id="turn" style="display: none;">
+        </div>
+
+        <canvas id="canvas" width="1200" height="1080" style="display: none;">
+        </canvas>
+
+        <div id="instruction" style="display: none;" class="instruction">
+            <p>Manten click izquierdo para arrastrar tu ficha y sueltala en uno de los casilleros del tablero.</p>
+        </div>
+
+        <div id="img-share" style="display: none;">
+            <button id="btn-share"></button>
+        </div>
+        <button id="play-again" style="display:none">Jugar de nuevo</button>
+    </div>
+
+
+    </div>
+
+
+    <script src="./js/Board.js"></script>
+    <script src="./js/Player.js"></script>
+    <script src="./js/Game.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/Circle.js"></script>
+
+</body>
+
+</html>
