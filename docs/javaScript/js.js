@@ -154,3 +154,8 @@ if (window.location.pathname.split("/").pop() == "login.html") {
 
 // LOADER
 
+console.log(window.location.pathname)
+if(window.location.pathname.split("/").pop() == "home.html"){
+    
+}
+

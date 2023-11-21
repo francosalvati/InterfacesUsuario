@@ -22,9 +22,7 @@ btnHamburguesa.addEventListener('click', () => {
 
 
 //PANTALLA DE CARGAif
-if (window.location.pathname.split("/").pop() == "index.html" || window.location.pathname.split("/").pop() == "") {
-
-
+if (window.location.pathname.split("/").pop() == "home.html" || window.location.pathname.split("/").pop() == "") {
 
   function cargar() {
     if (progreso < 100) {

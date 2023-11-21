@@ -196,13 +196,15 @@
 
 
         <main>
+
             <div class="juego-container">
                 <span class="crumb">
                     <a href="home.html">Inicio</a>><a href="">Biblioteca</a>><a href="">4 en lineas</a>
                 </span>
                 <h1>Pizzas vs Hamburgesas</h1>
 
-                <label for="fichaSize">Tamaño de Fichas:</label>
+
+                <!-- <label for="fichaSize">Tamaño de Fichas:</label>
                 <input type="number" id="fichaSize" value="50"><br>
 
                 <label for="lineasGanar">Líneas para Ganar:</label>
@@ -223,7 +225,65 @@
                 <canvas class="juego canvas" width="1500px" height="800px">
                     <div class="icono"></div>
                     <div class="barra-accion"></div>
-                </canvas>
+                </canvas> -->
+
+                <div class="game-container center">
+                
+                    <div id="container-comidas">
+                        <img src="./images/4enlinea/hamburguesa.png" id="img-comida1" width="120" height="120" class="img-select">
+                        <p>VS</p>
+                        <img src="./images/4enlinea/pizza.png" id="img-comida2" width="120" height="120" class="img-select">
+                    </div>
+                    <p id="timer" style="display: none;">05:00</p>
+                    <p id="winner" style="display: none;">
+                
+                    </p>
+                    <form id="miFormulario">
+                
+                        <label for="opciones">Selecciona tu comida favorita:</label>
+                        <br>
+                        <select name="comida1" id="comida1">
+                            <option value="pizza">Pizza</option>
+                            <option value="pollo">Pollo</option>
+                            <option value="pan">Pan</option>
+                        </select>
+                
+                        <select name="comida2" id="comida2">
+                            <option value="hamburguesa">Hamburguesa</option>
+                            <option value="carne">Carne</option>
+                            <option value="brocoli">Brocoli</option>
+                        </select>
+                
+                        <br>
+                        <label for="opciones">Selecciona el juego:</label>
+                        <select id="opciones" class="opciones">
+                            <option value="4">4 en Linea</option>
+                            <option value="5">5 en Linea</option>
+                            <option value="6">6 en Linea</option>
+                            <option value="7">7 en Linea</option>
+                        </select>
+                
+                        <div id="playgame">
+                            <button type="submit" id="btn-play">JUGAR</button>
+                        </div>
+                    </form>
+                
+                    <div id="turn" style="display: none;">
+                    </div>
+                
+                    <canvas id="canvas" width="1200" height="1080" style="display: none;">
+                    </canvas>
+                
+                    <div id="instruction" style="display: none;" class="instruction">
+                        <p>Manten click izquierdo para arrastrar tu ficha y sueltala en uno de los casilleros del tablero.</p>
+                    </div>
+                
+                    <div id="img-share" style="display: none;">
+                        <button id="btn-share"></button>
+                    </div>
+                    <button id="play-again" style="display:none">Jugar de nuevo</button>
+                </div>
+
 
                 <div class="reglas">
                     <div class="rotulador">
@@ -631,14 +691,13 @@
                 <li class="item"><img src="./imagenes/TwitterIcon.svg" alt="twitter"></li>
             </ul>
         </footer>
-    </div>
+    </div>  
     <script src="javaScript/index.js"></script>
-    <script src="javaScript/Pieza.js"></script>
-    <script src="javaScript/CajadeJuego.js"></script>
-    <script src="javaScript/Ficha.js"></script>
-    <script src="javaScript/Tablero.js"></script>
-    <script src="javaScript/PiezaTablero.js"></script>
-    <script src="javaScript/juego.js"></script>
+    <script src="javaScript/Board.js"></script>
+    <script src="javaScript/Player.js"></script>
+    <script src="javaScript/Game.js"></script>
+    <script src="javaScript/main.js"></script>
+    <script src="javaScript/Circle.js"></script>
 </body>
 
 </html>

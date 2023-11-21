@@ -76,6 +76,9 @@ ul {
     list-style: none;
 }
 
+.center{
+    margin: auto;
+}
 
 /* Acciones */
 
@@ -1122,4 +1125,225 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .testCOlor {
     color: rgba(185, 193, 40, 0.373)
+}
+
+/*CSS PAGINA DE JUEGO*/
+.play-ask,
+.title-comment {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+
+}
+
+.play-ask img,
+.title-comment img {
+    height: 50px;
+    margin-right: 10px;
+
+}
+
+#container-info-help .p-margin {
+    margin-top: 10px;
+}
+
+#winner {
+    position: absolute;
+    top: 270px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 3em;
+    text-shadow: 4px 4px 6px #000;
+    font-family: 'Press Start 2P';
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#container-comidas {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    font-size: 2em;
+    width: 30%;
+    margin-top: 70px;
+    border-radius: 20px;
+
+}
+
+#play-again {
+    position: absolute;
+    top: 580px;
+    width: 180px;
+    font-weight: bolder;
+    height: 100px;
+    background-color: rgba(32, 14, 89, 1);
+    opacity: 0.8;
+    z-index: 999;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 28px;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+#play-again:hover {
+    background-color: cadetblue;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../images/4enlinea/formimg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 1655px;
+    height: 980px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 20px;
+    align-items: center;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+
+}
+
+#turn {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.788);
+    background-color: #333;
+    margin-bottom: 1px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-top: 60px;
+    margin-bottom: 4px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+}
+
+#miFormulario {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background-color: rgba(37, 37, 37, 0.9);
+    color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position-x: 750px;
+    width: 600px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: inherit;
+    padding: 50px;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.671);
+
+
+}
+
+#timer {
+    position: absolute;
+    margin-top: 210px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 10px 10px 0 0;
+    display: inline-block;
+}
+
+.img-form-game {
+    width: 35px;
+    height: 40px;
+}
+
+.opciones,
+#comida1,
+#comida2 {
+    width: 50%;
+    font-weight: bolder;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #2e2c2ccb;
+    border-radius: 5px;
+    background-color: rgba(168, 168, 168, 0.9);
+    font-size: 1.2em;
+
+
+}
+
+#comida1,
+#comida2 {
+    width: 49.5%;
+}
+
+.custom-dropdown {
+    display: inline-block;
+    width: 297px;
+    margin-bottom: 30px;
+}
+
+.selected-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.selected-option img {
+    max-width: 20px;
+    max-height: 20px;
+    margin-right: 10px;
+}
+
+.options-list {
+    display: none;
+    position: absolute;
+    background-color: #adadad;
+    color: black;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.options-list li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.options-list li:hover {
+    background-color: #f0f0f0;
+}
+
+#miFormulario h2,
+#playgame {
+    text-align: center;
+}
+
+#btn-play {
+    width: 200px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 16px;
+    color: black;
+    background-color: lightcoral;
+}
+
+#miFormulario select {
+    color: black;
+    background-color: gray;
+    border-radius: 10px;
+
 }
