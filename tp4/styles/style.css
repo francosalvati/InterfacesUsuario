@@ -1,0 +1,208 @@
+:root{
+  --color-blanco:#fff;
+  --color-negro:#000;
+  --color-primario-S:#02187E;
+  --color-Secundario:#FFE901;
+  --color-Primario:#2982FF;
+  --color-primario-L:#5499F8;
+  --elevacion:linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
+  --fuente: 'Lato', sans-serif;
+}
+.h1{
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 94.5%;
+}
+.h2{
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 94.5%;
+}
+.p,.a{
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.a{
+  letter-spacing: 2.2px;
+  text-decoration-line: underline;
+}
+.underline{
+  text-decoration-line: underline; 
+}
+.font_button{
+  color: var(--color-primario-S);
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 94.5%;
+  font-family: var(--fuente);
+}
+.shadow_blue{
+  box-shadow: 4px 5px 0px 0 var(--color-primario-S);
+}
+.shadow_grey{
+  box-shadow: 3px 6px 8px 4px rgba(0, 0, 0, 0.15);
+}
+.button{
+  border: 8px solid var(--color-Primario);
+  background: var(--color-Secundario);
+  border-radius: 111px;
+  height: 66px;
+  width: 200px;
+}
+
+.sticky{
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.centrar{
+  display: grid;
+  place-content: center;
+}
+
+.flex{
+  display: flex;
+}
+
+.a-center{
+  align-items: center;
+}
+
+.jc-center{
+  justify-content: center;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+.layout{
+  width: 100vw;
+  margin: auto;
+}
+
+ul{
+  list-style: none;
+}
+
+header{
+  width: 100%;
+  background: var(--color-primario-L);
+  padding: 10px;
+  height: 103px;
+  z-index: 150;
+}
+
+header ul{
+  width: 100%;
+  max-width: 1080px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  position: relative;
+}
+
+.btn_menu{
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.btn_menu .borde{
+  width: 46px;
+  height: 12px;
+  background-color: var(--color-Primario);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_menu div.linea{
+  width: 38px;
+  height: 5px;
+  background-color: var(--color-Secundario);
+  border-radius: 8px;
+}
+
+header .img{
+  width: 590px;
+  position: absolute;
+  top: 91px;
+  left: calc(227px);
+  transition: .5s ease-in;
+  z-index: 150;
+}
+
+header img{
+  position: relative;
+  width: 100%;
+}
+
+
+header button{
+  width: 200px;
+  height: 50px;
+}
+
+header.scrolleando .img{
+  width: 133px;
+  top: 0px;
+  left: calc(574px - 100px);
+  transition: .5s ease-in;
+}
+
+
+/* Edificios Paralax */
+
+
+.parallax-edificios{
+  position: relative;
+  z-index: 20;
+  height: 720px;
+}
+
+
+.absolute{
+  position: absolute;
+}
+
+.left {
+  left: 0;
+}
+
+.rigth{
+  right: 0;
+}
+.bottom {
+  bottom: 0;
+}
+
+.center-p{
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top{
+  top: 0;
+}
+
+.w-100{
+  width: 100%;
+}
+
+.cielo{
+  position: absolute;
+  width: 100vw;
+}
+
+.edificios{}
